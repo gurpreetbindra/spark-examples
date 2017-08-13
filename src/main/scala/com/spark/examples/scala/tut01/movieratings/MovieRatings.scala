@@ -23,7 +23,7 @@ class MovieRatings {
       val ratings = lines.map(_.split("\\s+")(2))
       val count = ratings.countByValue()
 
-      count.foreach(x => println(x._1 + " titles have rating of " + x._2))
+      count.foreach(x => println(x._2 + " titles have rating of " + x._1))
   }
 }
 
