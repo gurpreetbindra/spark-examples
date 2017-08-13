@@ -9,11 +9,11 @@ import org.apache.spark.{SparkConf, SparkContext}
 //spark-submit --class com.spark.examples.scala.tut01.movieratings.MovieRatings ~/IdeaProjects/spark-examples/target/spark-examples-1.0-SNAPSHOT.jar
 
 /* Expected results
-4 titles have rating of 34174
-5 titles have rating of 21201
-1 titles have rating of 6110
-2 titles have rating of 11370
-3 titles have rating of 27145
+34174 titles have rating of 4
+21201 titles have rating of 5
+6110 titles have rating of 1
+11370 titles have rating of 2
+27145 titles have rating of 3
  */
 
 class MovieRatings {
@@ -23,7 +23,7 @@ class MovieRatings {
       val ratings = lines.map(_.split("\\s+")(2))
       val count = ratings.countByValue()
 
-      count.foreach(x => println(x._1 + " titles have rating of " + x._2))
+      count.foreach(x => println(x._2 + " titles have rating of " + x._1))
   }
 }
 
